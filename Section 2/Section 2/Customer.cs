@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 
+// Section 2 Lecture 7
+
 namespace Classes
 {
     public class Customer
@@ -20,7 +22,7 @@ namespace Classes
         }
 
         public Customer(int id, string name)
-            //: this(id) // initializes Id and Orders
+            : this(id) // initializes Id and Orders
         {
             this.Name = name;
         }
