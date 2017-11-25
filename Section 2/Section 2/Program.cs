@@ -1,6 +1,6 @@
 ﻿using System;
 
-// Section 2 Lecture 6
+// Section 2 Lecture 7
 
 namespace Classes
 {
