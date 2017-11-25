@@ -1,22 +1,40 @@
 ﻿using System;
 
-// Section 2 Lecture 7
+// Section 2 Lecture 9
 
 namespace Classes
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            var customer = new Customer();
-            customer.Id = 1;
-            customer.Name = "John";
+            try
+            {
+                var num = int.Parse("abc");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Conversion failed.");
+            }
 
-            var order = new Order();
-            customer.Orders.Add(order);
 
-            Console.WriteLine(customer.Id);
-            Console.WriteLine(customer.Name);
+            int number;
+            var result = int.TryParse("abc", out number);
+            if (result)
+                Console.WriteLine(number);
+            else
+                Console.WriteLine("Conversion failed.");
+
+        }
+
+        static void UseParams()
+        {
+            var calculator = new Calculator();
+            Console.WriteLine(calculator.Add(1, 2));
+            Console.WriteLine(calculator.Add(1, 2, 3));
+            Console.WriteLine(calculator.Add(1, 2, 3, 4)); // Convenience of params keyword
+            Console.WriteLine(calculator.Add(new int[] { 1, 2, 3, 4, 5 }));
         }
     }
 }
