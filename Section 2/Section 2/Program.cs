@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 /*
 Exercises Section 2 Lecture 15
@@ -21,10 +22,36 @@ namespace Classes
 
         static void Main(string[] args)
         {
-            var  stopwatch = new Stopwatch();
-            Console.WriteLine("Duration: " + stopwatch.duration);
+            
+           ..
+
+
+            // Instantiate a new Stopwatch object
+            var stopwatch = new Stopwatch();
+            var input = "";
+
+            while (true)
+            {
+
+                input = Console.ReadLine();
+
+                if (input == "s")
+                {
+                    stopwatch.Start();
+                }
+                else if (input == "x")
+                {
+                    stopwatch.Stop();
+                }
+                else
+                {
+                    Console.WriteLine("Error");
+                    break;
+                }
+
+                Console.WriteLine("Duration: " + stopwatch.Duration());
+            }
 
         }
-
     }
 }

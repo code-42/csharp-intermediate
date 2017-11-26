@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6095F340-68EE-4EB4-8B78-B721521C2C40}</ProjectGuid>
+    <ProjectGuid>{047820A7-0031-48D8-9413-95B38DED298F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Section_2</RootNamespace>
-    <AssemblyName>Section 2</AssemblyName>
+    <RootNamespace>Section_3</RootNamespace>
+    <AssemblyName>Section_3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,15 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="HttpCookie.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="PresentationObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stopwatch.cs" />
+    <Compile Include="Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
