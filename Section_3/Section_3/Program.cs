@@ -5,16 +5,21 @@ using System.Threading.Tasks;
 
 namespace Section_3
 {
-    // Section 3 Lecture 17
+    // Section 3 Lecture 18
+
 
     class Program
     {
         static void Main(string[] args)
         {
-            var text = new Text();
-            text.Width = 100;
-            text.Copy();
+            var dbMigrator = new DbMigrator(new Logger());
 
+            var logger = new Logger();
+            var installer = new Installer(logger);
+
+            dbMigrator.Migrate();
+
+            installer.Install();
         }
     }
 }
