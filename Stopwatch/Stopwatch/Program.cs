@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 /*
+ * Copyright 2017 Edward Dupre
+ * 
 Exercises Section 2 Lecture 15
 
 Exercise 1: Design a Stopwatch
@@ -27,23 +29,29 @@ namespace Stopwatch
             // Instantiate a new Stopwatch object
             var stopwatch = new Stopwatch();
 
+            // This code block will run at least once
             do
             {
+                // Provide instructions to the user
                 Console.WriteLine("Press spacebar to Start the Stopwatch");
                 Console.WriteLine("\nPress Control+C to exit");
 
+                // Call start() method when spacebar is pressed
                 if (Console.ReadKey().Key == ConsoleKey.Spacebar)
                 {
                     Console.WriteLine("\nStopwatch started at " + stopwatch.Start());
                     Console.WriteLine("\nPress spacebar again to stop");
                 }
 
+                // Call stop() method when spacebar is pressed
                 if (Console.ReadKey().Key == ConsoleKey.Spacebar)
                 {
                     Console.WriteLine("\nStopwatch stopped at " + stopwatch.Stop());
                 }
 
+                // Display Duration to user
                 Console.WriteLine("\nDuration: " + stopwatch.Duration() + "\n");
+                
             } while (true);
         }
     }
