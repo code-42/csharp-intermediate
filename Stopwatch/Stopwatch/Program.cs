@@ -18,7 +18,7 @@ We should not be able to start a stopwatch twice in a row (because that may over
 start time). So the class should throw an InvalidOperationException if its started twice. 
 */
 
-namespace Exercise1_Section2_Lecture15_Stopwatch
+namespace Stopwatch
 {
     class Program
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercise1_Section2_Lecture15_Stopwatch
+namespace Stopwatch
 {
     public class Stopwatch
     {

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{90024670-C817-405B-98A9-CC5712815C78}</ProjectGuid>
+    <ProjectGuid>{D636FBE1-850D-4B4C-9695-D5C51C7F683A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Exercise1_Section2_Lecture15_Stopwatch</RootNamespace>
-    <AssemblyName>Exercise1_Section2_Lecture15_Stopwatch</AssemblyName>
+    <RootNamespace>Stopwatch</RootNamespace>
+    <AssemblyName>Stopwatch</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
