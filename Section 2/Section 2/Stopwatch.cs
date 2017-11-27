@@ -1,39 +1,53 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Classes
+namespace Stopwatch
 {
     public class Stopwatch
     {
         private DateTime _start;
         private DateTime _stop;
-
+     
         private TimeSpan _duration;
-
-        //public Stopwatch()
-        //{
-
-        //}
 
         public TimeSpan Duration()
         {
-            _duration += _stop - _start;
-            Console.WriteLine(_duration);
+            var start = new TimeSpan(_start.Hour, _start.Minute, _start.Second);
+            var stop = new TimeSpan(_stop.Hour, _stop.Minute, _stop.Second);
+
+            _duration = stop - start;
+
             return _duration;
-            
         }
 
-        public void Start()
+        public string Start()
         {
-            _start = DateTime.Now;
-            Console.WriteLine(_start);
+            try
+            {
+                _start = DateTime.Now;
+                //Console.WriteLine("27. _start: " + _start);
+                return Convert.ToString(_start);
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine("e == " + e);
+            }
+            return String.Empty;
         }
 
-        public void Stop()
+        public string Stop()
         {
-            _stop = DateTime.Now;
-            var dur = _stop - _start;
-            Console.WriteLine(dur);
+            try
+            {
+                _stop = DateTime.Now;
+                //Console.WriteLine("30. _stop: " + _stop);
+                return Convert.ToString(_stop);
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine("e == " + e);
+            }
+            return String.Empty;
         }
 
     }
