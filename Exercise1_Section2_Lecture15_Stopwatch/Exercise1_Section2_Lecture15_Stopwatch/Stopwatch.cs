@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
-namespace Stopwatch
+namespace Exercise1_Section2_Lecture15_Stopwatch
 {
     public class Stopwatch
     {
         private DateTime _start;
         private DateTime _stop;
-     
+
         private TimeSpan _duration;
 
         public TimeSpan Duration()
