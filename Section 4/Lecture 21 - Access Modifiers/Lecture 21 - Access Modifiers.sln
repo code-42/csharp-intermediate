@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture 21 - Access Modifiers", "Lecture 21 - Access Modifiers\Lecture 21 - Access Modifiers.csproj", "{C0988A33-DB0D-4368-BA7A-5B456027CA01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon", "Amazon\Amazon.csproj", "{20694BD9-20BE-491F-8712-1F03A713CFB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0988A33-DB0D-4368-BA7A-5B456027CA01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0988A33-DB0D-4368-BA7A-5B456027CA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0988A33-DB0D-4368-BA7A-5B456027CA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0988A33-DB0D-4368-BA7A-5B456027CA01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20694BD9-20BE-491F-8712-1F03A713CFB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20694BD9-20BE-491F-8712-1F03A713CFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20694BD9-20BE-491F-8712-1F03A713CFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20694BD9-20BE-491F-8712-1F03A713CFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1513845D-7F4F-4D4C-93E8-25389782CC86}
+	EndGlobalSection
+EndGlobal
