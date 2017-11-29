@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4541A4FD-FA2E-4186-8C0D-AEA5C161BB53}</ProjectGuid>
+    <ProjectGuid>{3121F0E5-E9DE-429E-B70C-CD0727CC4B67}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lecture_22___Constructors</RootNamespace>
-    <AssemblyName>Lecture 22 - Constructors</AssemblyName>
+    <RootNamespace>Lecture_23___Casting</RootNamespace>
+    <AssemblyName>Lecture 23 - Casting</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vehicle.cs" />
+    <Compile Include="Shape.cs" />
+    <Compile Include="Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -2,6 +2,7 @@
 
 namespace Lecture_22___Constructors
 {
+    // Car inherits from parent class Vehicle
     public class Car : Vehicle
     {
         // Use :base keyword to call one of the constructors of the Vehicle class
