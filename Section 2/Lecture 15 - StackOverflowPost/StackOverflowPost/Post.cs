@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,48 +25,67 @@ procedural programming. Such programs are very fragile. Making a change breaks m
 of the code.
 
 */
-namespace StackOverflowPost
+namespace Post
 {
-    class Post
+    public class Post
     {
-        public string _title { get; set; }
-        public string _description { get; set; }
-        public DateTime _created { get; set; }
-        public int Vote { get; set; }
+        // Declare public properties
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime Created { get; set; }
 
-        public int _upVote { get; set; }
-        public int _downVote { get; set; }
+        // Calculated property
+        private int _vote = 0;
 
-        public Post()
+        // Vote property has logic to increase or decrease votes
+        public int Vote(string vote)
         {
-            Console.WriteLine(Vote);
-        }
+            // User keyboard input
+            if (vote == "+")
+                _vote++;
 
+            // User keyboard input
+            if (vote == "-")
+                _vote--;
+
+            return _vote;
+        }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("StackOverflow Post Application\n");
+            Console.WriteLine("Usage: Press + to up-vote or - to down-vote\n");
+            Console.WriteLine("Press Control+C to exit.\n");
             var post = new Post();
+            post.Title = "My First Post";
+            post.Description = "The aim of this exercise is to help you understand that classes\r\nshould encapsulate data AND behaviour around that data.";
+            post.Created = DateTime.Now;
+
+            Console.WriteLine(post.Title);
+            Console.WriteLine(post.Description);
+            Console.WriteLine(post.Created);
 
             do
             {
+                // Declare variable vote for input
                 var vote = Console.ReadLine();
 
+                // + button adds votes
                 if (vote == "+")
-                    post._upVote++;
+                    post.Vote("+");
 
+
+                // - button subtracts votes
                 if (vote == "-")
-                    post._downVote--;
+                    post.Vote("-");
 
-            
-            post._title = "My First Post";
-            post._description = "I don't know what I'm doing.";
-            post._created = DateTime.Now;
-
-            Console.WriteLine(post._title + "\n" + post._description + "\n" + post._created);
+                // Display votes total to console
+                Console.WriteLine(post.Vote(" "));
             } while (true);
+            return;
         }
     }
 }

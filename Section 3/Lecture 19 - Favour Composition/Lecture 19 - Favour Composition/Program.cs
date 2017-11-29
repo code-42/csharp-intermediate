@@ -10,6 +10,7 @@ namespace Lecture_19___Favour_Composition
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
