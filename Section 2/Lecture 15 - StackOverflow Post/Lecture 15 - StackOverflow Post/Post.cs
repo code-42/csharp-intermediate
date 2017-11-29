@@ -12,7 +12,7 @@ namespace Lecture_15___StackOverflow_Post
         // Calculated property
         private int _vote = 0;
 
-        // Vote property has logic to increase or decrease votes
+        // _vote property has logic to increase or decrease votes
         public int Vote(string vote)
         {
             // User keyboard input
