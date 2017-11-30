@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,7 +59,8 @@ namespace Lecture_26___Exercise___Design_a_Stack
 {
     class Stack
     {
-        private object _stack { get; set; }
+        //private object _stack { get; set; }
+        private Stack<object> _stack = new Stack<object>();
 
         public Stack()
         {
@@ -69,10 +71,11 @@ namespace Lecture_26___Exercise___Design_a_Stack
         {
             // if null is passed to this method
             // throw InvalidOperationException
-            _stack = obj;
+            
             if (_stack != null)
             {
-                Console.WriteLine("75. " + _stack);
+                _stack.Push(obj);
+                //Console.WriteLine("75. " + _stack);
             }
         }
 
@@ -83,9 +86,10 @@ namespace Lecture_26___Exercise___Design_a_Stack
             // throw InvalidOperationException
             try
             {
-                Console.WriteLine(_stack.ToString());
+                if (_stack != null)
+                    return _stack;
             }
-            catch
+            catch(Exception)
             {
                 Console.WriteLine("OOPs");
             }
@@ -97,34 +101,22 @@ namespace Lecture_26___Exercise___Design_a_Stack
             // Removes all objects from the stack
             
         }
-
-        //public override string ToString()
-        //{
-        //    // Prevents printing namespace.classname
-        //    return (string)this._stack;
-        //}
     }
     class Program
     {
         static void Main(string[] args)
         {
+            //Stack<object> stack = new Stack<object>();
             var stack = new Stack();
             stack.Push(1);
-            stack.Push("Ed");
-            stack.Push(DateTime.Now);
+            stack.Push(2);
+            stack.Push(3);
+            //stack.Push(null);
 
-            //Console.WriteLine(stack.Push("Waldo!"));
 
-            // throws error
-            //foreach (object Obj in stack)
-            //{
-            //    Console.WriteLine(Obj);
-            //}
-
+            Console.WriteLine("Popping off {0} " + stack.Pop());
+            Console.WriteLine("Popping off {0} " + stack.Pop());
             Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            //Console.WriteLine(stack.Pop());
         }
     }
 }
