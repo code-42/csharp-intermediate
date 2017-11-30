@@ -58,19 +58,22 @@ namespace Lecture_26___Exercise___Design_a_Stack
 {
     class Stack
     {
-        private object _stack;
+        private object _stack { get; set; }
 
         public Stack()
         {
-            
+            Console.WriteLine("Inside Stack ctor");
         }
 
         public void Push(object obj)
         {
-
             // if null is passed to this method
             // throw InvalidOperationException
-
+            _stack = obj;
+            if (_stack != null)
+            {
+                Console.WriteLine("75. " + _stack);
+            }
         }
 
         public object Pop()
@@ -78,6 +81,14 @@ namespace Lecture_26___Exercise___Design_a_Stack
             // Removes the object from top of stack and returns it
             // if Pop() is called on empty stack,
             // throw InvalidOperationException
+            try
+            {
+                Console.WriteLine(_stack.ToString());
+            }
+            catch
+            {
+                Console.WriteLine("OOPs");
+            }
             return 0;
         }
 
@@ -86,6 +97,12 @@ namespace Lecture_26___Exercise___Design_a_Stack
             // Removes all objects from the stack
             
         }
+
+        //public override string ToString()
+        //{
+        //    // Prevents printing namespace.classname
+        //    return (string)this._stack;
+        //}
     }
     class Program
     {
@@ -93,12 +110,21 @@ namespace Lecture_26___Exercise___Design_a_Stack
         {
             var stack = new Stack();
             stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
+            stack.Push("Ed");
+            stack.Push(DateTime.Now);
+
+            //Console.WriteLine(stack.Push("Waldo!"));
+
+            // throws error
+            //foreach (object Obj in stack)
+            //{
+            //    Console.WriteLine(Obj);
+            //}
 
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
+            //Console.WriteLine(stack.Pop());
         }
     }
 }
