@@ -13,12 +13,16 @@ namespace Lecture_24___Boxing
         {
             var list = new ArrayList();
             list.Add(1);  // boxing because 1 is a value
-            list.Add("My Name"); // no boxing
-            list.Add(DateTime.Today); // boxing
+            list.Add("My Name"); // string is a reference, so no boxing 
+            list.Add(DateTime.Today); // structure, so boxing
 
+            // var number = (int) list[1]; // InvalidCastException
+
+            // Generic list so will not boxing
             var anotherList = new List<int>();
             var names = new List<string>();
-            names.Add(null);
+            names.Add("Ed");
+            Console.WriteLine(names[0]);
         }
     }
 }

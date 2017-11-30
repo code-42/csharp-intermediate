@@ -51,24 +51,39 @@ Note: The downside of using the object class here is that if we store value type
 bool, DateTime) in our Stack, boxing and unboxing occurs, which comes with a small
 performance penalty. In my C# Advanced course, I’ll teach you how to resolve this by using
 generics, but for now don’t worry about it. 
+// Then why did he talk about it in Lecture 24 - Boxing and Unboxing
 */
 
 namespace Lecture_26___Exercise___Design_a_Stack
 {
     class Stack
     {
-        void Push(object obj)
+        private object _stack;
+
+        public Stack()
         {
             
         }
 
-        object Pop()
+        public void Push(object obj)
         {
+
+            // if null is passed to this method
+            // throw InvalidOperationException
+
+        }
+
+        public object Pop()
+        {
+            // Removes the object from top of stack and returns it
+            // if Pop() is called on empty stack,
+            // throw InvalidOperationException
             return 0;
         }
 
         void Clear()
         {
+            // Removes all objects from the stack
             
         }
     }
@@ -76,6 +91,14 @@ namespace Lecture_26___Exercise___Design_a_Stack
     {
         static void Main(string[] args)
         {
+            var stack = new Stack();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
         }
     }
 }
