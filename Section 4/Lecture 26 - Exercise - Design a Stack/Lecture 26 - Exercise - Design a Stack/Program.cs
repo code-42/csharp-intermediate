@@ -64,7 +64,11 @@ namespace Lecture_26___Exercise___Design_a_Stack
 
         public Stack()
         {
-            Console.WriteLine("Inside Stack ctor");
+            // http://www.csharpstar.com/csharp-program-stack-push-pop/
+            Console.WriteLine("Inside Stack constructor");
+            int StackSizeSet = 10;
+            object item = new Object[StackSizeSet];
+            int top = -1;
         }
 
         public void Push(object obj)

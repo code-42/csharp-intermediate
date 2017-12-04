@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture 27 - Method Overriding", "Lecture 27 - Method Overriding\Lecture 27 - Method Overriding.csproj", "{BB3A29B3-0E7B-433A-8513-6EB79026C90D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB3A29B3-0E7B-433A-8513-6EB79026C90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3A29B3-0E7B-433A-8513-6EB79026C90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3A29B3-0E7B-433A-8513-6EB79026C90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3A29B3-0E7B-433A-8513-6EB79026C90D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E2634F1-B394-4CAB-B2C3-0C1A146C13B9}
+	EndGlobalSection
+EndGlobal
