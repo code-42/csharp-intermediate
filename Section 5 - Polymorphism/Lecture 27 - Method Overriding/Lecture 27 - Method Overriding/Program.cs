@@ -10,65 +10,20 @@ namespace Lecture_27___Method_Overriding
     {
         static void Main(string[] args)
         {
+            // Declare a List object to hold the shapes
             var shapes = new List<Shape>();
+
+            // Instantiate new shape objects
             shapes.Add(new Circle());
             shapes.Add(new Rectangle());
 
+            // Instantiate a canvas object
             var canvas = new Canvas();
+
+            // Call the DrawShapes() method of the Canvas class
+            // which calls the Draw() method for each kind of shape
+            // in the Shape class
             canvas.DrawShapes(shapes);
-        }
-    }
-
-    public class Circle : Shape
-    {
-        public override void Draw()
-        {
-            Console.WriteLine("Draw a circle");
-        }
-    }
-
-    public class Rectangle : Shape
-    {
-        public override void Draw()
-        {
-            Console.WriteLine("Draw a rectangle");
-        }
-    }
-
-    public class Triangle : Shape
-    {
-        public override void Draw()
-        {
-            Console.WriteLine("Draw a triangle");
-        }
-    }
-
-    public class Shape
-    {
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public Position Position { get; set; }
-
-        public virtual void Draw()
-        {
-
-        }
-    }
-
-    public class Position
-    {
-        public int X { get; set; }
-        public int Y { get; set; }
-    }
-
-    public class Canvas
-    {
-        public void DrawShapes(List<Shape> shapes)
-        {
-            foreach (var shape in shapes)
-            {
-                shape.Draw();
-            }
         }
     }
 }

@@ -53,6 +53,7 @@ bool, DateTime) in our Stack, boxing and unboxing occurs, which comes with a sma
 performance penalty. In my C# Advanced course, I’ll teach you how to resolve this by using
 generics, but for now don’t worry about it. 
 // Then why did he talk about it in Lecture 24 - Boxing and Unboxing
+// .http://www.csharpstar.com/csharp-program-stack-push-pop/
 */
 
 namespace Lecture_26___Exercise___Design_a_Stack
@@ -65,11 +66,7 @@ namespace Lecture_26___Exercise___Design_a_Stack
 
         public Stack()
         {
-            // http://www.csharpstar.com/csharp-program-stack-push-pop/
             Console.WriteLine("Inside Stack constructor");
-            int StackSizeSet = 10;
-            object item = new Object[StackSizeSet];
-            int top = -1;
         }
 
         public void Push(object obj)
@@ -80,7 +77,7 @@ namespace Lecture_26___Exercise___Design_a_Stack
             if (obj != null)
             {
                 _stack.Add(obj);
-                //Console.WriteLine("75. " + _stack);
+                // Console.WriteLine("Pushing onto the stack " + obj);
             }
         }
 
@@ -124,11 +121,11 @@ namespace Lecture_26___Exercise___Design_a_Stack
             stack.Push(2);
             stack.Push(3);
             //stack.Push(null);
+            //stack.Push("My Sharona");
 
-
-            Console.WriteLine("Popping off {0} " + stack.Pop());
-            Console.WriteLine("Popping off {0} " + stack.Pop());
-            Console.WriteLine("Popping off {0} " + stack.Pop());
+            Console.WriteLine("Popping off " + stack.Pop());
+            Console.WriteLine("Popping off " + stack.Pop());
+            Console.WriteLine("Popping off " + stack.Pop());
         }
     }
 }
