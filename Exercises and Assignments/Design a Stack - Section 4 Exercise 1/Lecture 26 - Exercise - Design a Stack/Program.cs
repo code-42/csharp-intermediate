@@ -60,7 +60,8 @@ namespace Lecture_26___Exercise___Design_a_Stack
     class Stack
     {
         //private object _stack { get; set; }
-        private Stack<object> _stack = new Stack<object>();
+        //private Stack<object> _stack = new Stack<object>();
+        private List<object> _stack = new List<object>();
 
         public Stack()
         {
@@ -76,9 +77,9 @@ namespace Lecture_26___Exercise___Design_a_Stack
             // if null is passed to this method
             // throw InvalidOperationException
             
-            if (_stack != null)
+            if (obj != null)
             {
-                _stack.Push(obj);
+                _stack.Add(obj);
                 //Console.WriteLine("75. " + _stack);
             }
         }
@@ -90,8 +91,15 @@ namespace Lecture_26___Exercise___Design_a_Stack
             // throw InvalidOperationException
             try
             {
-                if (_stack != null)
-                    return _stack;
+                if (_stack.Count > 0)
+                {
+                    var index = _stack.Count - 1;
+                
+                    var toReturn = _stack[index];
+                    _stack.RemoveAt(index);
+
+                    return (toReturn);
+                }
             }
             catch(Exception)
             {
@@ -103,7 +111,7 @@ namespace Lecture_26___Exercise___Design_a_Stack
         void Clear()
         {
             // Removes all objects from the stack
-            
+            _stack.Clear();
         }
     }
     class Program
@@ -120,7 +128,7 @@ namespace Lecture_26___Exercise___Design_a_Stack
 
             Console.WriteLine("Popping off {0} " + stack.Pop());
             Console.WriteLine("Popping off {0} " + stack.Pop());
-            Console.WriteLine(stack.Pop());
+            Console.WriteLine("Popping off {0} " + stack.Pop());
         }
     }
 }
