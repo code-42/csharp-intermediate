@@ -12,6 +12,7 @@ namespace Lecture_17___Inheritance
             var text = new Text();
             text.Width = 100;
             text.Copy();
+            text.Duplicate();
         }
     }
 }
