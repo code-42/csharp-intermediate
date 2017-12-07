@@ -49,8 +49,8 @@ namespace Database_Connection
             public string _connectionString { get; set; }
             private TimeSpan _timeout { get; set; }
 
-            public virtual void OpenConnection(string SQLconnectionString, TimeSpan Timeout) { Console.WriteLine("Default implementation"); }
-            public virtual void CloseConnection() { Console.WriteLine("Default implementation"); }
+            public virtual void OpenConnection(string SQLconnectionString, TimeSpan Timeout) { Console.WriteLine("Default open implementation"); }
+            public virtual void CloseConnection() { Console.WriteLine("Default close implementation"); }
         }
 
         // Need base class constructor
@@ -111,6 +111,8 @@ namespace Database_Connection
             var connection = new DbConnection();
 
             connection.OpenConnection(SQLconnectionString, Timeout);
+            Console.WriteLine("// do stuff");
+            connection.CloseConnection();
 
         }
     }
