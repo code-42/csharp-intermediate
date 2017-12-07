@@ -6,9 +6,16 @@ namespace Database_Connection
     public class OracleConnection : DbConnection
         {
             // Override the abstract OpenConnection() method declared in the DbConnection class
-            public override void OpenConnection(string SQLconnectionString, TimeSpan Timeout)
+            public override void OpenConnection(string ConnectionString, TimeSpan Timeout)
             {
-                Console.WriteLine("Opened Oracle Connection");
+                if (!string.IsNullOrEmpty(ConnectionString))
+                {
+                    Console.WriteLine("Opened Oracle Connection");
+                }
+                else
+                {
+                    Console.WriteLine("Error:  the SQLconnectionString is empty");
+                }
             }
 
             public override void CloseConnection()

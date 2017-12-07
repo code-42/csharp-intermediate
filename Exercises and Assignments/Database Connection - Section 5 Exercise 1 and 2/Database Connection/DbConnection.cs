@@ -11,7 +11,7 @@ namespace Database_Connection
             private TimeSpan _timeout { get; set; }
             
             // Declare abstract methods for abstract class
-            public abstract void OpenConnection(string SQLconnectionString, TimeSpan Timeout);
+            public abstract void OpenConnection(string ConnectionString, TimeSpan Timeout);
             public abstract void CloseConnection();
         }
 }

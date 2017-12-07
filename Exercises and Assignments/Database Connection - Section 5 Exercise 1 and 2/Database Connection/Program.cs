@@ -72,15 +72,5 @@ namespace Database_Connection
             oracleConnection.CloseConnection();
             Console.WriteLine();
         }
-
-        public class DbCommand
-        {
-            public DbConnection sqlConnection;
-
-            public DbCommand(DbConnection sqlConnection)
-            {
-                Console.WriteLine("// do db stuff\n");
-            }
-        }
     }
 }
