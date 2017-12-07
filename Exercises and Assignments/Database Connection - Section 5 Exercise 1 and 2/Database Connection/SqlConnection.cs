@@ -2,9 +2,6 @@
 
 namespace Database_Connection
 {
-    // Need base class constructor
-    // ReSharper is not installed - creates permissions errors
-
     // Derived class
     public class SqlConnection : DbConnection
         {

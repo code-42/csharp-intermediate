@@ -56,6 +56,9 @@ namespace Database_Connection
             // Call abstract OpenConnection() and then CloseConnection() method of DbConnection class
             sqlConnection.OpenConnection(SQLConnectionString, Timeout);
             Console.WriteLine("// do stuff");
+
+            var dbCommand = new DbCommand(sqlConnection);
+            
             sqlConnection.CloseConnection();
             Console.WriteLine();
 
@@ -68,6 +71,16 @@ namespace Database_Connection
             Console.WriteLine("// do stuff");
             oracleConnection.CloseConnection();
             Console.WriteLine();
+        }
+
+        public class DbCommand
+        {
+            public DbConnection sqlConnection;
+
+            public DbCommand(DbConnection sqlConnection)
+            {
+                Console.WriteLine("// do db stuff\n");
+            }
         }
     }
 }
