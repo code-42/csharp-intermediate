@@ -45,18 +45,32 @@ namespace Database_Connection
     {
         public class DbCommand
         {
-            public DbConnection Connection;
+            // the DbCommand() method below is printing the error message
+            // it should print the do db stuff message
+            // am I supposed to put getters and setters in here?
+            public DbConnection Connection { get; set; }
+            public string Instruction { get; set; }
 
-            public DbCommand(DbConnection Connection)
+            public DbCommand(DbConnection Connection, string Instruction)
             {
-                if (Equals(Connection))
-                {
-                    Console.WriteLine("// do db stuff - this is printed from DbCommand class\n");
-                }
-                else
-                {
-                    Console.WriteLine("Error:  the Connection is empty");
-                }                
+                // Verify that we can print from inside DbCommand()
+                Console.WriteLine();
+                Console.WriteLine("print Connection from inside DbCommand: " + Connection);
+                Console.WriteLine("print Instruction from inside DbCommand: " + Instruction);
+                Console.WriteLine();
+                Console.WriteLine("Note that here, inside the DbCommand, we have a reference to DbConnection. " +
+                    "Depending on the type of DbConnection sent at runtime, opening and closing a connection will be different. " +
+                    "For example, if we initialize this DbCommand with a " + Connection + ", " +
+                    "we will open and close a connection to a " + Connection + " database. \nThis is polymorphism.\n");
+                Execute(Instruction);              
+            }
+
+            public void Execute(string Instruction)
+            {
+                Console.WriteLine("// Printed from within Execute()");
+                Console.WriteLine("// Open the connection");
+                Console.WriteLine("// Run the instruction");
+                Console.WriteLine("// Close the connection");
             }
         }
     }

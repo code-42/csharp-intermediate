@@ -11,10 +11,11 @@ namespace Database_Connection
                 if (!string.IsNullOrEmpty(ConnectionString))
                 {
                     Console.WriteLine("Opened Oracle Connection");
+                    Console.WriteLine("ConnectionString: " + ConnectionString);
                 }
                 else
                 {
-                    Console.WriteLine("Error:  the SQLconnectionString is empty");
+                    Console.WriteLine("Error: the ConnectionString is empty");
                 }
             }
 

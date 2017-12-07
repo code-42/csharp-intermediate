@@ -46,31 +46,66 @@ namespace Database_Connection
         {
             // Declare variables to hold the Connection string and Timeout
             // SQLConnectionString used in WebScrapingProjects
+            TimeSpan Timeout = new TimeSpan(30);
+            // string SQLConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
+            string SQLConnectionString = "This is SQL Connection string";
+            // Declare a new SqlConnection and OracleConnection
+            var sqlConnection = new SqlConnection();
+
+            // Call abstract method OpenConnection() and then CloseConnection() method of DbConnection class
+            sqlConnection.OpenConnection(SQLConnectionString, Timeout);
+
+            // Declare a variable to be passed to DbCommand()
+            var sqlInstruction = "// do SQL stuff";
+
+            // Initialize a new DbCommand for each connection
+            var SQLCommand = new DbCommand(sqlConnection, sqlInstruction);
+
+            // Close the connections
+            sqlConnection.CloseConnection();
+            Console.WriteLine();
+
+            // All together now...
+            string OracleConnectionString = "IDK any details of Oracle connection string";
+            var oracleConnection = new OracleConnection();
+            oracleConnection.OpenConnection(OracleConnectionString, Timeout);
+            var oracleInstruction = "// do Oracle stuff";
+            var OracleCommand = new DbCommand(oracleConnection, oracleInstruction);
+            oracleConnection.CloseConnection();
+
+            /*
+             * // This section pairs all of the above commands and is less effective reading the output
+            // Declare variables to hold the Connection string and Timeout
+            // SQLConnectionString used in WebScrapingProjects
             string SQLConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
             string OracleConnectionString = @"IDK any details of Oracle connection string";
             TimeSpan Timeout = new TimeSpan(30);
 
-            // Declare a new SqlConnection
+            // Declare a new SqlConnection and OracleConnection
             var sqlConnection = new SqlConnection();
-
-            // Call abstract OpenConnection() and then CloseConnection() method of DbConnection class
-            sqlConnection.OpenConnection(SQLConnectionString, Timeout);
-            Console.WriteLine("// do stuff");
-
-            var dbCommand = new DbCommand(sqlConnection);
-            
-            sqlConnection.CloseConnection();
-            Console.WriteLine();
-
-
-            // Declare a new SqlConnection
             var oracleConnection = new OracleConnection();
 
-            // Call abstract OpenConnection() and then CloseConnection() method of DbConnection class
+            // Call abstract method OpenConnection() and then CloseConnection() method of DbConnection class
+            sqlConnection.OpenConnection(SQLConnectionString, Timeout);
             oracleConnection.OpenConnection(OracleConnectionString, Timeout);
-            Console.WriteLine("// do stuff");
+
+            Console.WriteLine("// do stuff - printed from Main()");
+            Console.WriteLine();
+
+            // Declare a variable to be passed to DbCommand()
+            var sqlInstruction = "// do SQL stuff";
+            var oracleInstruction = "// do Oracle stuff";
+
+            // Initialize a new DbCommand for each connection
+            var SQLCommand = new DbCommand(sqlConnection, sqlInstruction);
+            var OracleCommand = new DbCommand(oracleConnection, oracleInstruction);
+            Console.WriteLine();
+
+            // Close the connections
+            sqlConnection.CloseConnection();
             oracleConnection.CloseConnection();
             Console.WriteLine();
+            */
         }
     }
 }
