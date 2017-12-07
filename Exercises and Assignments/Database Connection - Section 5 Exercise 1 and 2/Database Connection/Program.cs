@@ -44,20 +44,30 @@ namespace Database_Connection
     {
         static void Main(string[] args)
         {
-            // Declare a List object to hold the connections
-            var connections = new List<DbConnection>();
-            connections.Add(new SqlConnection());
-            connections.Add(new OracleConnection());
-
-            string SQLconnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
+            // Declare variables to hold the Connection string and Timeout
+            // SQLConnectionString used in WebScrapingProjects
+            string SQLConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
+            string OracleConnectionString = @"IDK any details of Oracle connection string";
             TimeSpan Timeout = new TimeSpan(30);
 
-            var connection = new DbConnection();
+            // Declare a new SqlConnection
+            var sqlConnection = new SqlConnection();
 
-            connection.OpenConnection(SQLconnectionString, Timeout);
-            Console.WriteLine("// do stuff\n");
-            connection.CloseConnection();
+            // Call abstract OpenConnection() and then CloseConnection() method of DbConnection class
+            sqlConnection.OpenConnection(SQLConnectionString, Timeout);
+            Console.WriteLine("// do stuff");
+            sqlConnection.CloseConnection();
+            Console.WriteLine();
 
+
+            // Declare a new SqlConnection
+            var oracleConnection = new OracleConnection();
+
+            // Call abstract OpenConnection() and then CloseConnection() method of DbConnection class
+            oracleConnection.OpenConnection(OracleConnectionString, Timeout);
+            Console.WriteLine("// do stuff");
+            oracleConnection.CloseConnection();
+            Console.WriteLine();
         }
     }
 }
