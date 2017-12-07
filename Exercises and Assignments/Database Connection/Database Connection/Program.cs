@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /*
- Exercise 1: Design a database connection
+Exercise 1: Design a database connection
 To access a database, we need to open a connection to it first and close it once our job is done.
 Connecting to a database depends on the type of the target database and the database
 management system (DBMS). For example, connecting to a SQL Server database is different
@@ -32,14 +32,47 @@ Derive two classes SqlConnection and OracleConnection from DbConnection and prov
 simple implementation of opening and closing connections using Console.WriteLine(). In the
 real-world, SQL Server provides an API for opening or closing a connection to a database. But
 for this exercise, we don’t need to worry about it.
+*/
 
-     */
 namespace Database_Connection
 {
     class Program
     {
+        public class DbConnection
+        {
+            private string _connectionString;
+            private TimeSpan _timeout;
+
+            public DbConnection(string connectionString)
+            {
+                _connectionString = connectionString;
+                Console.WriteLine("DbConnection is being initialized. {0}", connectionString);
+            }
+        }
+
+        public class SQL : DbConnection
+        {
+            public SQL (string connectionString) : base(connectionString)
+            {
+            Console.WriteLine("SQL is being initialized. {0}", connectionString);
+            }
+
+            public void OpenConnection()
+            {
+                Console.WriteLine("Connection open");
+            }
+
+            public void CloseConnection()
+            {
+                Console.WriteLine("Connection open");
+            }
+        }
+
         static void Main(string[] args)
         {
+            string SQLconnString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
+            var conn = new SQL(SQLconnString);
+
         }
     }
 }
