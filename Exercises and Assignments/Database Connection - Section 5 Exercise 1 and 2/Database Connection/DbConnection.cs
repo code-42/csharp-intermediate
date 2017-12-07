@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /*
 Exercise 1: Design a database connection
@@ -40,7 +37,7 @@ for this exercise, we don’t need to worry about it.
 
 namespace Database_Connection
 {
-    class Program
+    partial class Program
     {
         // Base class
         public class DbConnection
@@ -49,8 +46,8 @@ namespace Database_Connection
             public string _connectionString { get; set; }
             private TimeSpan _timeout { get; set; }
 
-            public virtual void OpenConnection(string SQLconnectionString, TimeSpan Timeout) { Console.WriteLine("Default open implementation"); }
-            public virtual void CloseConnection() { Console.WriteLine("Default close implementation"); }
+            public virtual void OpenConnection(string SQLconnectionString, TimeSpan Timeout) { Console.WriteLine("Default open implementation\n"); }
+            public virtual void CloseConnection() { Console.WriteLine("Default close implementation\n"); }
         }
 
         // Need base class constructor
@@ -96,24 +93,6 @@ namespace Database_Connection
                     connection.OpenConnection(SQLconnectionString, Timeout);
                 }
             }
-        }
-
-        static void Main(string[] args)
-        {
-            // Declare a List object to hold the connections
-            var connections = new List<DbConnection>();
-            connections.Add(new SqlConnection());
-            connections.Add(new OracleConnection());
-
-            string SQLconnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
-            TimeSpan Timeout = new TimeSpan(30);
-
-            var connection = new DbConnection();
-
-            connection.OpenConnection(SQLconnectionString, Timeout);
-            Console.WriteLine("// do stuff");
-            connection.CloseConnection();
-
         }
     }
 }
