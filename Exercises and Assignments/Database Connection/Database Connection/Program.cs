@@ -16,14 +16,18 @@ common:
 • They can be closed
 • They may have a timeout attribute (so if the connection could not be opened within the
 timeout, an exception will be thrown).
+
 Your job is to represent these commonalities in a base class called DbConnection. This class
 should have two properties:
+
 ConnectionString : string
 Timeout : TimeSpan
+
 A DbConnection will not be in a valid state if it doesn’t have a connection string. So you need to
 pass a connection string in the constructor of this class. Also, take into account the scenarios
 where null or an empty string is sent as the connection string. Make sure to throw an exception
 to guarantee that your class will always be in a valid state.
+
 Our DbConnection should also have two methods for opening and closing a connection. We
 don’t know how to open or close a connection in a DbConnection and this should be left to the
 classes that derive from DbConnection. These classes (eg SqlConnection or OracleConnection)
@@ -38,40 +42,75 @@ namespace Database_Connection
 {
     class Program
     {
+        // Base class
         public class DbConnection
         {
-            private string _connectionString;
-            private TimeSpan _timeout;
+            // base class called DbConnection. This class should have two properties:
+            public string _connectionString { get; set; }
+            private TimeSpan _timeout { get; set; }
 
-            public DbConnection(string connectionString)
+            public virtual void OpenConnection(string SQLconnectionString, TimeSpan Timeout) { Console.WriteLine("Default implementation"); }
+            public virtual void CloseConnection() { Console.WriteLine("Default implementation"); }
+        }
+
+        // Need base class constructor
+        // ReSharper is not installed - creates permissions errors
+
+        // Derived class
+        public class SqlConnection : DbConnection
+        {
+            public override void OpenConnection(string SQLconnectionString, TimeSpan Timeout)
             {
-                _connectionString = connectionString;
-                Console.WriteLine("DbConnection is being initialized. {0}", connectionString);
+                Console.WriteLine("Opened SQL Connection");
+            }
+
+            public override void CloseConnection()
+            {
+                Console.WriteLine("Closed SQL Connection");
             }
         }
 
-        public class SQL : DbConnection
+        // Derived class
+        public class OracleConnection : DbConnection
         {
-            public SQL (string connectionString) : base(connectionString)
+            public override void OpenConnection(string SQLconnectionString, TimeSpan Timeout)
             {
-            Console.WriteLine("SQL is being initialized. {0}", connectionString);
+                Console.WriteLine("Opened Oracle Connection");
             }
 
-            public void OpenConnection()
+            public override void CloseConnection()
             {
-                Console.WriteLine("Connection open");
+                Console.WriteLine("Closed Oracle Connection");
             }
+        }
 
-            public void CloseConnection()
+        public class Connection
+        {
+            string SQLconnectionString;
+            TimeSpan Timeout;
+
+            public void Connect(List<DbConnection> connections)
             {
-                Console.WriteLine("Connection open");
+                foreach (var connection in connections)
+                {
+                    connection.OpenConnection(SQLconnectionString, Timeout);
+                }
             }
         }
 
         static void Main(string[] args)
         {
-            string SQLconnString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
-            var conn = new SQL(SQLconnString);
+            // Declare a List object to hold the connections
+            var connections = new List<DbConnection>();
+            connections.Add(new SqlConnection());
+            connections.Add(new OracleConnection());
+
+            string SQLconnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
+            TimeSpan Timeout = new TimeSpan(30);
+
+            var connection = new DbConnection();
+
+            connection.OpenConnection(SQLconnectionString, Timeout);
 
         }
     }
