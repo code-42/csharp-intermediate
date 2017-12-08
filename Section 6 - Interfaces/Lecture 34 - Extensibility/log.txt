@@ -1,0 +1,8 @@
+INFO: Migration started at {0}12/8/2017 1:27:44 PM
+INFO: Migration finished at {0}12/8/2017 1:27:44 PM
+INFO: Migration started at {0}12/8/2017 1:28:18 PM
+INFO: Migration finished at {0}12/8/2017 1:28:18 PM
+INFO: Migration started at {0}12/8/2017 1:38:20 PM
+INFO: Migration finished at {0}12/8/2017 1:38:20 PM
+INFO: Migration started at {0}12/8/2017 2:11:20 PM
+INFO: Migration finished at {0}12/8/2017 2:11:20 PM
