@@ -47,8 +47,10 @@ namespace Database_Connection
             // Declare variables to hold the Connection string and Timeout
             // SQLConnectionString used in WebScrapingProjects
             TimeSpan Timeout = new TimeSpan(30);
+            
             // string SQLConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
             string SQLConnectionString = "This is SQL Connection string";
+            
             // Declare a new SqlConnection and OracleConnection
             var sqlConnection = new SqlConnection();
 
@@ -66,6 +68,7 @@ namespace Database_Connection
             Console.WriteLine();
 
             // All together now...
+            // Same comments as above
             string OracleConnectionString = "IDK any details of Oracle connection string";
             var oracleConnection = new OracleConnection();
             oracleConnection.OpenConnection(OracleConnectionString, Timeout);
@@ -74,7 +77,7 @@ namespace Database_Connection
             oracleConnection.CloseConnection();
 
             /*
-             * // This section pairs all of the above commands and is less effective reading the output
+            * This section pairs all of the above commands and is less effective reading the output, but it works too
             // Declare variables to hold the Connection string and Timeout
             // SQLConnectionString used in WebScrapingProjects
             string SQLConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\MyDox\C_sharp_projects\csharp-intermediate\WebScraperProjects\eBayScraper\eBayScraper\eBayDatabase1.mdf;Integrated Security=True;Connect Timeout = 30";
