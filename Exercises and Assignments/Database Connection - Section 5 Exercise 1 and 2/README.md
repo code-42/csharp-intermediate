@@ -36,8 +36,11 @@ from connecting to an Oracle database. But both these connections have a few thi
 common:
 
 • They have a connection string
+
 • They can be opened
+
 • They can be closed
+
 • They may have a timeout attribute (so if the connection could not be opened within the
 timeout, an exception will be thrown).
 
@@ -45,6 +48,7 @@ Your job is to represent these commonalities in a base class called DbConnection
 should have two properties:
 
 ConnectionString : string
+
 Timeout : TimeSpan
 
 A DbConnection will not be in a valid state if it doesn’t have a connection string. So you need to
@@ -81,7 +85,9 @@ Each command should be executable. So we need to create a method called Execute(
 method, we need a simple implementation as follows:
 
 Open the connection
+
 Run the instruction
+
 Close the connection
 
 Note that here, inside the DbCommand, we have a reference to DbConnection. Depending on
